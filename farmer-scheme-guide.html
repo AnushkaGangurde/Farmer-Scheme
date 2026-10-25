@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Farmer Scheme Guide | शेतकरी योजना मार्गदर्शक</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#f2f6f0;--sf:#fff;--tx:#17251b;--mu:#4d5f52;--g:#14532d;--gt:#fff;--ln:#d5e0d3;--c1:#14532d;--c2:#1d6fb8;--c3:#b4440c;--c4:#7a5c00;--hl:#fde9c4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a13;--sf:#17261c;--tx:#e8f1e9;--mu:#a3b5a7;--g:#6fcf8e;--gt:#0f1a13;--ln:#2a3d2f;--c1:#6fcf8e;--c2:#7db8ee;--c3:#f0985f;--c4:#e3c15a;--hl:#3a2f12;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1a13;--sf:#17261c;--tx:#e8f1e9;--mu:#a3b5a7;--g:#6fcf8e;--gt:#0f1a13;--ln:#2a3d2f;--c1:#6fcf8e;--c2:#7db8ee;--c3:#f0985f;--c4:#e3c15a;--hl:#3a2f12;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 18px/1.55 "Mukta",system-ui,-apple-system,"Noto Sans Devanagari","Segoe UI",sans-serif}
+.w{max-width:760px;margin:0 auto;padding:0 18px}
+header{padding:20px 0 8px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-weight:800;font-size:17px;color:var(--g)}
+.lang{display:flex;border:2px solid var(--g);border-radius:999px;overflow:hidden}
+.lang button{font:600 16px "Mukta",sans-serif;padding:6px 16px;border:0;background:transparent;color:var(--g);cursor:pointer;min-height:40px}
+.lang button[aria-pressed="true"]{background:var(--g);color:var(--gt)}
+h1{font-weight:800;font-size:clamp(34px,8vw,52px);line-height:1.1;margin:28px 0 10px;color:var(--g);letter-spacing:-.01em}
+.sub{font-size:19px;color:var(--mu);margin:0 0 22px;max-width:34em}
+.help{background:var(--hl);border-radius:14px;padding:14px 16px;margin:0 0 22px}
+.help b{display:block;margin-bottom:6px}
+.help a{display:inline-block;margin:2px 14px 2px 0;color:var(--tx);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.help small{color:var(--mu);font-weight:400}
+#q{width:100%;font:400 18px "Mukta",sans-serif;padding:13px 16px;border-radius:12px;border:2px solid var(--ln);background:var(--sf);color:var(--tx);min-height:50px}
+#q:focus,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--c2);outline-offset:2px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 20px}
+.chips button{font:600 16px "Mukta",sans-serif;padding:8px 16px;border-radius:999px;border:2px solid var(--ln);background:var(--sf);color:var(--tx);cursor:pointer;min-height:42px}
+.chips button[aria-pressed="true"]{background:var(--g);border-color:var(--g);color:var(--gt)}
+.card{background:var(--sf);border:1px solid var(--ln);border-left:8px solid var(--cc);border-radius:12px;margin:0 0 12px}
+.card summary{list-style:none;cursor:pointer;padding:16px 18px;display:block}
+.card summary::-webkit-details-marker{display:none}
+.card h2{margin:0;font-size:21px;line-height:1.25;font-weight:800;color:var(--cc);display:flex;justify-content:space-between;gap:10px}
+.card h2::after{content:"+";font-weight:400;font-size:26px;line-height:1}
+.card[open] h2::after{content:"\2212"}
+.ben{margin:6px 0 0;font-size:19px;font-weight:600}
+.body{padding:0 18px 18px;border-top:1px solid var(--ln)}
+.body h3{margin:14px 0 2px;font-size:16px;font-weight:800;color:var(--mu)}
+.body p{margin:0}
+.go{display:inline-block;margin-top:16px;padding:11px 18px;border-radius:10px;background:var(--g);color:var(--gt);font-weight:700;text-decoration:none;min-height:44px}
+.none{padding:24px;text-align:center;color:var(--mu)}
+footer{padding:24px 0 36px;color:var(--mu);font-size:15px}
+footer p{margin:0 0 8px}
+@media(prefers-reduced-motion:no-preference){.card{transition:box-shadow .15s}.card[open]{box-shadow:0 2px 10px rgba(20,83,45,.15)}}
+.brandw{display:flex;align-items:center;gap:10px}.logo{width:46px;height:46px;flex:none}
+.hero{position:relative;margin:18px 0 20px;border-radius:22px;overflow:hidden;background:linear-gradient(160deg,#0f5132 0%,#15803d 55%,#0d9488 100%);color:#fff}
+.hero .tx{padding:26px 22px 0;position:relative;z-index:1}
+.hero h1{color:#fff;margin:0 0 8px}.hero .sub{color:#e3f6e8;margin:0 0 6px}
+.hero svg{display:block;width:100%;height:auto}
+.help{background:linear-gradient(90deg,#fde68a,#fdba74);color:#1f2a1d}.help a{color:#1f2a1d}.help small{color:#4a3a14}
+.chips button[aria-pressed="true"]{background:var(--k,var(--g));border-color:var(--k,var(--g));color:#fff}
+.card summary{display:flex;gap:14px;align-items:flex-start}
+.st{flex:1;min-width:0}
+.ic{flex:none;width:50px;height:50px;border-radius:15px;background:var(--cc);display:grid;place-items:center}
+.ic svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h2{color:var(--tx)}.body h3{color:var(--cc)}.go{background:var(--cc);color:#fff}
+</style>
+</head>
+<body>
+<div class="w">
+<header>
+<div class="top"><span class="brandw"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#14532d" stroke="#f59e0b" stroke-width="3"/><path d="M24 39V16" stroke="#fde68a" stroke-width="2.5" fill="none" stroke-linecap="round"/><g fill="#fbbf24"><ellipse cx="24" cy="11" rx="3" ry="5"/><ellipse cx="18" cy="20" rx="2.6" ry="5" transform="rotate(-30 18 20)"/><ellipse cx="30" cy="20" rx="2.6" ry="5" transform="rotate(30 30 20)"/><ellipse cx="18" cy="29" rx="2.6" ry="5" transform="rotate(-30 18 29)"/><ellipse cx="30" cy="29" rx="2.6" ry="5" transform="rotate(30 30 29)"/></g></svg><span class="brand" id="brand"></span></span>
+<div class="lang" role="group" aria-label="Language / भाषा"><button id="b-en" aria-pressed="true">English</button><button id="b-mr" aria-pressed="false">मराठी</button></div></div>
+<div class="hero"><div class="tx"><h1 id="ttl"></h1>
+<p class="sub" id="sub"></p></div>
+<svg viewBox="0 0 760 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><g id="w" fill="#fbbf24" stroke="#fbbf24" stroke-width="3"><path d="M0 200V118" fill="none"/><ellipse cx="0" cy="108" rx="5" ry="12" stroke="none"/><ellipse cx="-8" cy="124" rx="4" ry="9" transform="rotate(-25 -8 124)" stroke="none"/><ellipse cx="8" cy="124" rx="4" ry="9" transform="rotate(25 8 124)" stroke="none"/></g></defs><circle cx="650" cy="50" r="46" fill="#fde68a" opacity=".25"/><circle cx="650" cy="50" r="30" fill="#fcd34d"/><ellipse cx="470" cy="46" rx="46" ry="11" fill="#fff" opacity=".25"/><ellipse cx="500" cy="38" rx="28" ry="9" fill="#fff" opacity=".25"/><path d="M0 120Q150 70 320 110T640 98T760 112V200H0Z" fill="#0b3d26" opacity=".55"/><path d="M0 140Q200 100 400 130T760 125V200H0Z" fill="#166534"/><path d="M0 150H760V200H0Z" fill="#4d7c0f"/><path d="M0 200L330 150M120 200L350 150M240 200L370 150M360 200L388 150M480 200L408 150M600 200L428 150M720 200L448 150" stroke="#bef264" stroke-width="7" opacity=".6"/><use href="#w" x="36"/><use href="#w" x="72" y="14"/><use href="#w" x="106" y="4"/><use href="#w" x="654" y="6"/><use href="#w" x="690" y="16"/><use href="#w" x="726"/></svg></div>
+<div class="help" id="help"></div>
+<input id="q" type="search" autocomplete="off">
+<div class="chips" id="chips" role="group"></div>
+</header>
+<main id="list" aria-live="polite"></main>
+<footer><p id="note"></p></footer>
+</div>
+<script>
+var CATS=["all","income","insurance","credit","support"];
+var CC={all:"#14532d",income:"#16a34a",insurance:"#2563eb",credit:"#ea580c",support:"#92400e"};
+var COL=["#16a34a","#0d9488","#2563eb","#ea580c","#92400e","#b45309","#db2777"];
+var ICO=["<circle cx='12' cy='12' r='9'/><path d='M8.5 8h7M8.5 11h7M9 8c5 0 5 5 0 5l5 4'/>","<ellipse cx='12' cy='7' rx='7' ry='3'/><path d='M5 7v5c0 1.7 3 3 7 3s7-1.3 7-3V7M5 12v5c0 1.7 3 3 7 3s7-1.3 7-3v-5'/>","<path d='M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'/><path d='M8.5 12l2.5 2.5 4.5-5'/>","<rect x='3' y='6' width='18' height='13' rx='2'/><path d='M3 10h18M7 15h4'/>","<path d='M12 21v-9M12 12c0-4-3-6-7-6 0 4 3 6 7 6zM12 14c0-3 2-5 6-5 0 3-2 5-6 5z'/>","<circle cx='12' cy='12' r='4'/><path d='M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1'/>","<path d='M12 20s-8-5-8-11a4.5 4.5 0 018-2.7A4.5 4.5 0 0120 9c0 6-8 11-8 11z'/>"];
+var UI={
+en:{brand:"Farmer Scheme Guide",ttl:"Government schemes, in plain words",sub:"Find what you can get, who can apply, and how to apply. Tap a scheme to read more.",q:"Search a scheme (for example: insurance, loan)",all:"All",income:"Income & pension",insurance:"Insurance",credit:"Loans",support:"Farm support",w:"Who can apply",d:"Documents needed",h:"How to apply",site:"Open official site",none:"No scheme found. Try another word or choose All.",help:"Need help? Free helplines",kcc:"Kisan Call Centre",pmk:"PM-KISAN",pmf:"Crop insurance",note:"Rules and amounts can change. Confirm at your taluka agriculture office, Gram Panchayat or the official site before you apply.",cred:"Community Engagement Project, SNJB’s KBJ College of Engineering, Chandwad. Computer Engineering, 2026–27."},
+mr:{brand:"शेतकरी योजना मार्गदर्शक",ttl:"सरकारी योजना, सोप्या भाषेत",sub:"काय मिळते, कोण अर्ज करू शकतो आणि अर्ज कसा करायचा, ते येथे पाहा. अधिक माहितीसाठी योजनेवर टॅप करा.",q:"योजना शोधा (उदा. विमा, कर्ज)",all:"सर्व",income:"उत्पन्न व पेन्शन",insurance:"विमा",credit:"कर्ज",support:"शेती सहाय्य",w:"कोण अर्ज करू शकतो",d:"लागणारी कागदपत्रे",h:"अर्ज कसा करावा",site:"अधिकृत संकेतस्थळ उघडा",none:"योजना सापडली नाही. दुसरा शब्द वापरा किंवा ‘सर्व’ निवडा.",help:"मदत हवी? मोफत हेल्पलाइन",kcc:"किसान कॉल सेंटर",pmk:"पीएम-किसान",pmf:"पीक विमा",note:"नियम व रक्कम बदलू शकतात. अर्ज करण्यापूर्वी तालुका कृषी कार्यालय, ग्रामपंचायत किंवा अधिकृत संकेतस्थळावर खात्री करा.",cred:"सामाजिक सहभाग प्रकल्प, एसएनजेबी केबीजे अभियांत्रिकी महाविद्यालय, चांदवड. संगणक अभियांत्रिकी, २०२६–२७."}
+};
+var S=[
+{c:"income",u:"https://pmkisan.gov.in/",
+en:{n:"PM-KISAN Samman Nidhi",b:"₹6,000 a year in 3 payments of ₹2,000, straight to your bank account",w:"Farmer families who own farmland. Income tax payers and institutional landholders are not eligible.",d:"Aadhaar, bank passbook, 7/12 and 8A land records, mobile number",h:"Register under ‘Farmers Corner’ on pmkisan.gov.in, or at a CSC centre or talathi office. Complete e-KYC."},
+mr:{n:"पीएम-किसान सन्मान निधी",b:"वर्षाला ₹६,००० (३ हप्ते, प्रत्येकी ₹२,०००) थेट बँक खात्यात",w:"शेतजमीन असलेली शेतकरी कुटुंबे. आयकर भरणारे व संस्थात्मक जमीनधारक पात्र नाहीत.",d:"आधार, बँक पासबुक, ७/१२ व ८अ उतारा, मोबाइल क्रमांक",h:"pmkisan.gov.in वरील ‘Farmers Corner’ मधून किंवा CSC केंद्र / तलाठी कार्यालयात नोंदणी करा. ई-केवायसी पूर्ण करा."}},
+{c:"income",u:"https://pmkisan.gov.in/",
+en:{n:"Namo Shetkari Mahasanman Nidhi",b:"Extra ₹6,000 a year from the Maharashtra government",w:"Maharashtra farmers who receive PM-KISAN.",d:"Same as PM-KISAN: Aadhaar, bank account, land record",h:"Usually no separate form. Keep your PM-KISAN registration and e-KYC complete, and confirm at the taluka agriculture office."},
+mr:{n:"नमो शेतकरी महासन्मान निधी",b:"राज्य सरकारकडून वर्षाला अतिरिक्त ₹६,०००",w:"पीएम-किसानचा लाभ घेणारे महाराष्ट्रातील शेतकरी.",d:"पीएम-किसान प्रमाणेच: आधार, बँक खाते, जमीन नोंद",h:"साधारणपणे वेगळा अर्ज नसतो. पीएम-किसान नोंदणी व ई-केवायसी पूर्ण ठेवा आणि तालुका कृषी कार्यालयात खात्री करा."}},
+{c:"insurance",u:"https://pmfby.gov.in/",
+en:{n:"PM Fasal Bima Yojana (crop insurance)",b:"Cover for crop loss. You pay 2% (kharif), 1.5% (rabi) or 5% (cash crops) of the insured amount",w:"Farmers growing notified crops in notified areas, including tenant farmers.",d:"Aadhaar, bank passbook, 7/12 extract, sowing declaration",h:"Apply before the last date through your bank, a CSC or pmfby.gov.in. Report any crop loss within 72 hours on 14447."},
+mr:{n:"प्रधानमंत्री पीक विमा योजना",b:"पीक नुकसानीपासून संरक्षण. शेतकऱ्याचा हप्ता: खरीप २%, रब्बी १.५%, नगदी पिके ५%",w:"अधिसूचित क्षेत्रातील अधिसूचित पिके घेणारे शेतकरी, भाडेकरू शेतकऱ्यांसह.",d:"आधार, बँक पासबुक, ७/१२ उतारा, पेरणी घोषणापत्र",h:"अंतिम तारखेपूर्वी बँक, CSC किंवा pmfby.gov.in वर अर्ज करा. नुकसान झाल्यास ७२ तासांत १४४४७ वर कळवा."}},
+{c:"credit",u:"https://agriwelfare.gov.in/",
+en:{n:"Kisan Credit Card (KCC)",b:"Low-interest loans for seed, fertiliser and other crop costs",w:"Farmers, tenant farmers, sharecroppers and self-help groups.",d:"Aadhaar, land record, passport photo, bank application form",h:"Apply at any bank or cooperative society. Repaying on time earns interest relief. Ask your bank for the current loan limit."},
+mr:{n:"किसान क्रेडिट कार्ड (KCC)",b:"बियाणे, खते व पीक खर्चासाठी कमी व्याजाचे कर्ज",w:"शेतकरी, भाडेकरू शेतकरी, वाटेकरी व बचत गट.",d:"आधार, जमीन उतारा, फोटो, बँकेचा अर्ज",h:"कोणत्याही बँकेत किंवा सहकारी संस्थेत अर्ज करा. वेळेवर परतफेड केल्यास व्याजसवलत मिळते. सध्याची कर्ज मर्यादा बँकेत विचारा."}},
+{c:"support",u:"https://soilhealth.dac.gov.in/",
+en:{n:"Soil Health Card",b:"Free soil test, with advice on which fertiliser your field needs",w:"All farmers.",d:"Land details and a mobile number",h:"Ask the village agriculture assistant to collect a soil sample, or register at soilhealth.dac.gov.in. Cards are renewed every 2 years."},
+mr:{n:"मृदा आरोग्य पत्रिका",b:"मोफत माती परीक्षण आणि शेताला कोणते खत हवे याचा सल्ला",w:"सर्व शेतकरी.",d:"जमिनीची माहिती व मोबाइल क्रमांक",h:"कृषी सहाय्यकाकडून माती नमुना घ्या किंवा soilhealth.dac.gov.in वर नोंदणी करा. पत्रिका दर २ वर्षांनी नूतनीकरण होते."}},
+{c:"support",u:"https://pmkusum.mnre.gov.in/",
+en:{n:"PM-KUSUM Solar Pump",b:"Large subsidy on solar water pumps; you pay only a small share",w:"Farmers with farmland and a water source.",d:"Aadhaar, 7/12 extract, bank account, proof of water source",h:"Apply on the state portal. Ask the agriculture office which agency is taking applications now."},
+mr:{n:"पीएम-कुसुम सौर कृषी पंप",b:"सौर पंपावर मोठे अनुदान; शेतकऱ्याचा हिस्सा कमी",w:"शेतजमीन व पाण्याचा स्रोत असलेले शेतकरी.",d:"आधार, ७/१२ उतारा, बँक खाते, पाणी स्रोताचा पुरावा",h:"राज्याच्या पोर्टलवर अर्ज करा. सध्या कोणती यंत्रणा अर्ज घेत आहे ते कृषी कार्यालयात विचारा."}},
+{c:"income",u:"https://maandhan.in/",
+en:{n:"PM Kisan Maandhan Pension",b:"₹3,000 a month pension after age 60",w:"Small and marginal farmers aged 18 to 40.",d:"Aadhaar, bank account, land record, age proof",h:"Register at a CSC. You pay ₹55 to ₹200 a month depending on your age, and the government adds an equal amount."},
+mr:{n:"पीएम किसान मानधन पेन्शन",b:"वयाच्या ६० नंतर दरमहा ₹३,००० पेन्शन",w:"१८ ते ४० वयाचे अल्पभूधारक व सीमांत शेतकरी.",d:"आधार, बँक खाते, जमीन उतारा, वयाचा पुरावा",h:"CSC केंद्रात नोंदणी करा. वयानुसार दरमहा ₹५५ ते ₹२०० भरावे लागतात आणि सरकार तेवढीच रक्कम भरते."}}
+];
+var lang="en",cat="all";
+try{var sv=localStorage.getItem("fsg-lang");if(sv==="mr")lang="mr"}catch(e){}
+var $=function(i){return document.getElementById(i)};
+function render(){
+var t=UI[lang],qv=$("q").value.trim().toLowerCase();
+document.documentElement.lang=lang;
+$("brand").textContent=t.brand;$("ttl").textContent=t.ttl;$("sub").textContent=t.sub;
+$("q").placeholder=t.q;$("q").setAttribute("aria-label",t.q);
+$("note").textContent=t.note;
+$("b-en").setAttribute("aria-pressed",lang==="en");$("b-mr").setAttribute("aria-pressed",lang==="mr");
+document.title=t.brand;
+$("help").innerHTML="<b>"+t.help+"</b><a href='tel:18001801551'>"+t.kcc+": 1800-180-1551</a><a href='tel:155261'>"+t.pmk+": 155261</a><a href='tel:14447'>"+t.pmf+": 14447</a>";
+$("chips").innerHTML=CATS.map(function(c){return "<button data-c='"+c+"' style='--k:"+CC[c]+"' aria-pressed='"+(c===cat)+"'>"+t[c]+"</button>"}).join("");
+var items=S.filter(function(s){
+if(cat!=="all"&&s.c!==cat)return false;
+if(!qv)return true;
+return (JSON.stringify(s.en)+JSON.stringify(s.mr)).toLowerCase().indexOf(qv)>-1});
+$("list").innerHTML=items.length?items.map(function(s){var x=s[lang],i=S.indexOf(s);
+return "<details class='card' style='--cc:"+COL[i]+"'><summary><span class='ic'><svg viewBox='0 0 24 24' aria-hidden='true'>"+ICO[i]+"</svg></span><span class='st'><h2>"+x.n+"</h2><p class='ben'>"+x.b+"</p></span></summary><div class='body'><h3>"+t.w+"</h3><p>"+x.w+"</p><h3>"+t.d+"</h3><p>"+x.d+"</p><h3>"+t.h+"</h3><p>"+x.h+"</p><a class='go' href='"+s.u+"' target='_blank' rel='noopener'>"+t.site+"</a></div></details>"}).join(""):"<p class='none'>"+t.none+"</p>";
+}
+$("b-en").onclick=function(){lang="en";try{localStorage.setItem("fsg-lang","en")}catch(e){}render()};
+$("b-mr").onclick=function(){lang="mr";try{localStorage.setItem("fsg-lang","mr")}catch(e){}render()};
+$("q").oninput=render;
+$("chips").onclick=function(e){var c=e.target.getAttribute("data-c");if(c){cat=c;render()}};
+render();
+</script>
+</body>
+</html>
